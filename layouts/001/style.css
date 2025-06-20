@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+}
+body {
+    font-family: monospace;
+    font-size: 14px;
+    margin: 0;
+    background: #f5b7af url(bg_dots.png);
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* header text */
+header {
+    padding: 20px;
+    text-align: center;
+    color: #efe9db;
+    font-size: 40px;
+    text-shadow: 1px 0px #272727, 0px 2px #272727, 0px -1px #272727, -1px 0px #272727;
+    font-style: italic;
+}
+
+/* navigation bar */
+nav {
+    background-color: #efe9db;
+    margin: 0;
+    padding: 10px;
+    border-radius: 16px 16px 0 0;
+    border-color: #272727;
+    border-style: solid;
+    border-width: 3px 3px 0 3px;
+    text-align: right;
+    box-shadow: 3px  4px #272727;
+}
+nav a {
+    color: #272727;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+}
+/* this adds a / before the links in the navigation bar */
+nav a::before {
+    content: "/";
+    padding-right: 6px;
+}
+nav a:hover {
+    background-color: #272727;
+    color: #efe9db;
+}
+
+/* main box that holds left and right colums */
+.content {  
+    display: flex;
+    flex-wrap: wrap;
+    border: 3px solid #272727;
+    margin-bottom: 20px;
+    box-shadow: 3px  4px #272727;
+}
+
+/* left sidebar area */
+aside {
+    flex: 30%;
+    background-color: #272727;
+    padding: 5px 15px;
+    color: #efe9db;
+}
+aside a, aside a:visited {
+    color: #efe9db;
+    text-decoration: none;
+    border-bottom: 1px dotted #efe9db;
+    padding: 0 2px;
+}
+aside a:hover {
+    color: #f5b7af;
+}
+aside a:active {
+    position: relative;
+    top: 1px;
+    left: 1px;
+}
+
+/* right content area */
+main {
+    flex: 70%;
+    background-color: #efe9db;
+    padding: 5px 20px;
+    color: #272727;
+}
+main a, main a:visited {
+    color: #272727;
+    text-decoration: none;
+    border-bottom: 1px dotted #272727;
+    padding: 0 2px;
+}
+main a:hover {
+    color: #efe9db;
+    background-color: #272727;
+    padding: 2px;
+}
+main a:active {
+    position: relative;
+    top: 1px;
+    left: 1px;
+}
+/* this limits the width of images so the layout doesn't stretch */
+aside img, main img {
+    max-width: 100%;
+}
+
+/* headers */
+h1 {
+    font-size: 16px;
+    font-weight: normal;
+    padding: 4px 10px;
+    border: 3px solid #272727;
+    border-radius: 16px;
+    box-shadow: 3px  3px #272727;
+    margin: 15px 0;
+}
+h2 {
+    font-size: 16px;
+    font-weight: normal;
+    color: #efe9db;
+    padding: 4px 10px;
+    border: 3px solid #272727;
+    border-radius: 16px;
+    background-color: #272727;
+    box-shadow: 3px  3px #f5b7af;
+    margin: 15px 0;
+}
+h3 {
+    font-size: 16px;
+    font-weight: normal;
+    color: #272727;
+    padding: 4px 10px;
+    border: 3px solid #efe9db;
+    border-radius: 16px;
+    background-color: #efe9db;
+    box-shadow: 3px  3px #f5b7af;
+    margin: 15px 0;
+}
+h4 {
+    font-size: 12px;
+    font-weight: normal;
+    font-style: italic;
+    text-align: center;
+    border-bottom: 1px dotted;
+}
+
+/* mark (highlighted text) style */
+mark {
+    background-color: #f5b7af;
+}
+
+/* underline style */
+u{
+    text-decoration: none;
+    box-shadow: inset 0 -5px 0 0 #f5b7af;
+}
+
+@media screen and (max-width: 700px) {
+    .content, nav {   
+        flex-direction: column;
+    }
+    main {
+        order: 1;
+    }
+    aside {
+        order: 2;
+    }
+}
